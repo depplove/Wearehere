@@ -13,7 +13,7 @@ public class Lottery {
     }
 
     public static void main(String[] args) {
-        double  random=Math.random()*1+1;
+        double  random=Math.random()*7+1;
         int rand=(int) random;
         Scanner scanner=new Scanner(System.in);
         System.out.println("Please enter your name to play");
