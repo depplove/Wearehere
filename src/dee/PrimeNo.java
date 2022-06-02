@@ -1,18 +1,18 @@
 package dee;
-
 public class PrimeNo {
     public static void main(String[] args) {
-        System.out.println(checkPrime(9));
+        System.out.println(checkPrime(8));
     }
-    static boolean checkPrime(int num){
-        if(num==0|| num==1) return false;
-        if(num==2) return true;
-
-        for(int i=2;i<num/2;i++){
+    static int checkPrime(int num){
+        if(num==0|| num==1) return -1;
+        if(num==2) return -1;
+        int count=0;
+        for(int i=2;i<num;i++){
             if(num%i==0){
-                return false;
+                return -1;
             }
+           count++;
         }
-        return true;
+        return count+2;
     }
 }

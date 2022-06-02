@@ -32,11 +32,11 @@ public class AltMinMaxMin {
         int max=arr.length-1;
         int min=0;
         boolean flag=false;
-        for(int i=1;i<=arr.length;i++){
+        for(int i=0;i<=arr.length-1;i++){
             if (false){
-                newarr[i-1]=arr[min++];
+                newarr[i]=arr[min++];
             }else{
-                newarr[i-1]=arr[max--];
+                newarr[i]=arr[max--];
             }
             flag=!flag;
         }
