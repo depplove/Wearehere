@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 10px 30px;
+}
+
+h1{
+    border-bottom: 2px solid lightgrey;
+    padding:10px 5px;
+    margin-bottom: 25px;
+    color: #6a6ef4;
+}
+
+div{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+table{
+    border-collapse: collapse;
+    margin: 10px auto;
+}
+th, td{
+    padding: 12px 20px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+tr:nth-child(even){
+    background-color: #fcf9f9;
+}
+thead > tr {
+    background-color: #6a6ef4;
+    color: white;
+    font-size: larger;
+}
+
+a{
+    padding: 5px 12px;
+    text-decoration: none;
+}
+
+.add-btn{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.add{
+    padding: 8px 18px;
+    background-color: #6a6ef4;
+    color: white;
+    border:2px solid #6a6ef4;
+    cursor: pointer;
+}
+
+.update{
+    background-color: #6a6ef4;
+    color: white;
+    border:2px solid #6a6ef4;
+    margin-right: 8px;
+}
+
+.delete{
+    border:2px solid lightgrey ;
+    color: #6a6ef4;
+
+}
+
+/* Pagination style */
+
+span{
+    display: inline-block;
+    margin-top: 8px;
+}
+
+span span{
+    margin-top:0 ;
+}
+
+span a{
+    background-color: seagreen;
+    color: aliceblue;
+    padding: 5px 11px;
+    font-weight: bold;
+}
+.pagination{
+    text-align: center;
+}
+
+.page-show{
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+span span{
+    background-color: seagreen;
+    color: aliceblue;
+    padding: 5px 11px;
+    font-weight: bold;
+}

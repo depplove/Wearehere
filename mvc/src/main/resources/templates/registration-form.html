@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/registration.css}">
+    <title>Registration</title>
+</head>
+<body>
+<main>
+    <h1>Employees Record Manager</h1>
+</main>
+<div>
+
+    <form action="#" th:action="@{/registration/employee}"
+          th:method="POST" th:object="${employee}">
+        <p th:if="${param.success}">You have been successfully registered. Please Login</p>
+        <h2>Registration</h2>
+        <input type="text" th:field="*{firstName}" placeholder="First Name">
+        <br>
+        <input type="text" th:field="*{lastName}" placeholder="Last Name">
+        <br>
+        <input type="email" th:field="*{email}" placeholder="Email">
+        <br>
+        <input type="password" th:field="*{password}" placeholder="Password">
+        <br>
+        <button type="submit">Register</button>
+        <br><br>
+        <span>Already Registered? </span><a href="@{/login}">Login here</a>
+    </form>
+
+</div>
+</body>
+</html>

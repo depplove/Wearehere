@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRM</title>
+    <link rel="stylesheet" th:href="@{/css/employees.css}">
+
+</head>
+<body>
+<main>
+    <h1>Employees Record Manager</h1>
+</main>
+<div>
+    <div class="add-btn">
+        <a th:href="@{/showForm}" class="add">Add Employee</a>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="temp : ${employee}">
+            <td th:text="${temp.getFirstName()}"/>
+            <td th:text="${temp.getLastName()}"/>
+            <td th:text="${temp.getEmail()}"/>
+            <td>
+                <a th:href="@{/update/{id}(id=${temp.id})}"
+                   class="update">
+                    Update
+                </a>
+                <a th:href="@{/delete/{id}(id=${temp.id})}"
+                   class="delete"
+                   onclick="if(!(confirm('Are you sure you want to delete this employee'))) return false">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pagination">
+    <span class="page-show">Page [[${currentPage}]] of [[${totalPages}]]</span>
+
+    <span th:if="${totalPages > 1}">
+        <a th:if="${currentPage -1 >= 1}" th:href="@{'/page/1'}">First</a>
+        <span th:unless="${currentPage -1 >= 1}">First</span>
+    </span>
+
+    <span th:if="${totalPages > 1}">
+        <a th:if="${currentPage -1 >= 1}" th:href="@{'/page/' + ${currentPage - 1}}">&lt;</a>
+        <span th:unless="${currentPage -1 >= 1}">&lt;</span>
+    </span>
+
+    <span th:if="${totalPages > 1}" th:each="i : ${#numbers.sequence(1,totalPages)}">
+        <a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}}">[[${i}]]</a>
+        <span th:unless="${currentPage != i}"> [[${i}]]</span>
+    </span>
+
+    <span th:if="${totalPages > 1}">
+        <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}}">&gt;</a>
+        <span th:unless="${currentPage < totalPages}">&gt;</span>
+    </span>
+
+    <span th:if="${totalPages > 1}">
+        <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}}">Last</a>
+        <span th:unless="${currentPage < totalPages}">Last</span>
+    </span>
+
+
+</div>
+
+</body>
+</html>
