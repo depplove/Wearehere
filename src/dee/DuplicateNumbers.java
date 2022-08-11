@@ -16,7 +16,6 @@ public class DuplicateNumbers {
 //         System.out.println("Print i: "+ i);
          for (int j=i+1;j<arr.length;j++){
             if (arr[i]==arr[j]){
-               System.out.println("Printing ");
                System.out.println("I got you!  "+ arr[i]);
                duplicateNumbers.add(arr[i]);
             }
